@@ -1,0 +1,12 @@
+<div class="content">
+  <div fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" *ngFor="let user of users" fxFlex.sm="33%">
+      <mat-card class="mat-elevation-z4">
+        <ul>
+          <li>Name: {{ user.name }}</li>
+          <li>Email: {{ user.email }}</li>
+        </ul>
+      </mat-card>
+    </div>
+  </div>
+</div>

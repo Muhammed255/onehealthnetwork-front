@@ -1,0 +1,22 @@
+<mat-toolbar color="primary">
+  <span>Auth App</span>
+  <span class="example-spacer"></span>
+  <button
+    mat-button
+    (click)="onLogout()"
+    *ngIf="userIsAuthenticated"
+    class="example-icon"
+  >
+    Logout
+  </button>
+  <div fxLayout="row" fxLayoutAlign="end center" *ngIf="!userIsAuthenticated">
+    <button mat-button [routerLink]="['/user/login']" class="example-icon">
+      Login
+    </button>
+    <button mat-button [routerLink]="['/user/signup']" class="example-icon">
+      Signup
+    </button>
+  </div>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

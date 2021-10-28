@@ -1,0 +1,48 @@
+<section fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+  <mat-card>
+    <h1 style="text-align: center">Signup</h1>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input
+          type="text"
+          matInput
+          formControlName="name"
+          placeholder="Enter your name"
+          required
+        />
+        <mat-error *ngIf="form.controls.name.errors?.required"
+          >Name is required</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="email"
+          matInput
+          formControlName="email"
+          placeholder="Enter your email"
+        />
+        <mat-error *ngIf="form.controls.email.errors?.required"
+          >Email is required</mat-error
+        >
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          type="password"
+          matInput
+          formControlName="password"
+          placeholder="Enter password"
+        />
+        <mat-error *ngIf="form.controls.password.errors?.required"
+          >Password is required</mat-error
+        >
+      </mat-form-field>
+      <button
+        mat-raised-button
+        color="primary"
+        type="submit"
+      >
+        SIGN UP
+      </button>
+    </form>
+  </mat-card>
+</section>
